@@ -6,7 +6,9 @@ import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 
 export default function GallerySection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  // Replace the any types with specific types
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   
   const { scrollYProgress } = useScroll({
     target: containerRef,

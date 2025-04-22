@@ -1,9 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { Card, CardContent } from "../components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 // Team member type
 type TeamMember = {
