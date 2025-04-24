@@ -1,7 +1,6 @@
 'use client';
 
-import { FacebookIcon } from '../icons/FacebookIcon';
-import { InstagramIcon } from '../icons/InstagramIcon';
+
 
 type ContactInfo = {
   label: string;
