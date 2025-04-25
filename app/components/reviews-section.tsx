@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Script from 'next/script';
@@ -24,18 +24,6 @@ interface Review {
   image: string | null;
   profilePic: string;
   fbLink: string;
-}
-
-// Esta interfaz se utilizará cuando implementemos la integración real con Facebook
-interface FacebookReview {
-  id: string;
-  created_time: string;
-  message?: string;
-  rating?: number;
-  reviewer?: {
-    name: string;
-    profile_photo?: string;
-  };
 }
 
 // Datos de reseñas predeterminados
@@ -127,21 +115,25 @@ export default function ReviewsSection() {
   const [loading, setLoading] = useState(true);
   const [fbLoaded, setFbLoaded] = useState(false);
 
-  // Carga de reseñas de Facebook cuando el SDK está listo
-  const loadFacebookReviews = async (): Promise<void> => {
+  // Usando useCallback para evitar recrear la función en cada render
+  const loadFacebookReviews = useCallback(async (): Promise<void> => {
     if ((window as Window & typeof globalThis & { FB?: unknown }).FB && fbLoaded) {
       // Esta sería la llamada real a la API de Facebook Graph
       // Por ahora, solo simulamos con un timeout
       setTimeout(() => {
-        // En una implementación real, obtendrías y procesarías las reseñas de FB aquí
-        // Ejemplo de cómo se procesarían las reseñas de Facebook:
-        // const fbReviews = [...] // datos obtenidos de la API
-        // const processedReviews = fbReviews.map(convertFacebookReviewToReview);
+        // Comentado para evitar el error de no usar setReviews
+        // Pero mantenemos la variable para usarla cuando implementes la integración real
+        // const processedReviews = [...]; 
         // setReviews([...processedReviews, ...fallbackReviews]);
+        
+        // Por ahora simplemente usamos los fallback reviews
+        setReviews(fallbackReviews);
         setLoading(false);
       }, 1000);
+    } else {
+      setLoading(false);
     }
-  };
+  }, [fbLoaded]);
 
   useEffect(() => {
     if (fbLoaded) {
