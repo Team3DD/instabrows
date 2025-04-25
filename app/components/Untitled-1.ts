@@ -1,0 +1,1 @@
+const REVIEW_IMAGE = '/images/reviews/review4.jpg'; // Usando una imagen existente en el directorio
