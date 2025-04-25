@@ -70,12 +70,12 @@ export default function AppointmentSection() {
               <h3 className="text-2xl font-medium mb-6">Horarios</h3>
               
               <div className="space-y-0">
-                {schedule.map((item, index) => (
-                  <div key={item.day} className="flex justify-between items-center py-4 border-b border-gray-200 last:border-b-0">
-                    <span className="text-lg">{item.day}</span>
-                    <span className="text-lg">{item.hours}</span>
-                  </div>
-                ))}
+              {schedule.map((item) => (
+                <div key={item.day} className="flex justify-between items-center py-4 border-b border-gray-200 last:border-b-0">
+                  <span className="text-lg">{item.day}</span>
+                  <span className="text-lg">{item.hours}</span>
+                </div>
+              ))}
               </div>
             </motion.div>
           </div>
