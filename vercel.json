@@ -2,10 +2,5 @@
   "version": 2,
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "framework": "nextjs",
-  "routes": [
-    { "src": "/(.*)", "dest": "/" }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  "installCommand": "npm install"
 }
