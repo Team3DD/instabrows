@@ -1,0 +1,12 @@
+
+{
+    "name": "ib",
+    "compatibility_date": "2025-04-29",
+    "assets": {
+      "directory": "./.next/static"
+    },
+    "build": {
+      "command": "npm run build",
+      "cwd": "."
+    }
+  }
