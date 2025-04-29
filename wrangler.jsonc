@@ -1,6 +1,6 @@
 
 {
-    "name": "ib",
+    "name": "instabrows",
     "compatibility_date": "2025-04-29",
     "assets": {
       "directory": "./.next/static"
